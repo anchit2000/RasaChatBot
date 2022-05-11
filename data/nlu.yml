@@ -92,11 +92,11 @@ nlu:
 
 - intent: plan_a_trip/specefic
   examples: |
-    - I wish to go to [Spain](destination)
-    - I want to go to [Madrid](destination)
-    - I wanted to go to [Bilbao](destination)
+    - I wish to go to [Spain]{"entity":"destination"}
+    - I want to go to [Madrid]{"entity":"destination"}
+    - I wanted to go to [Bilbao]{"entity":"destination"}
 
-- intent: plan_a_trip/specefic
+- intent: plan_a_trip/generic
   examples: |
     - I wish to go to a trip.
     - I want a trip.
