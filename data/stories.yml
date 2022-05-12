@@ -38,6 +38,7 @@ stories:
     - destination: Ibiza
   - slot_was_set:
     - destination: Ibiza
+  - action: utter_running_search
   - action: utter_ask_mobile_number
   - intent: get_contact_details
     entities:
@@ -59,12 +60,66 @@ stories:
     - destination: Barcelona
   - slot_was_set:
     - destination: Barcelona
+  - action: utter_running_search
   - action: utter_ask_mobile_number
   - intent: get_contact_details
     entities:
     - phone_number: '9914417457'
   - slot_was_set:
     - phone_number: '9914417457'
+  - action: utter_booking_done
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: plan_a_trip
+  - action: action_suggest_places
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: plan_a_trip
+  - action: action_suggest_places
+  - intent: plan_a_trip
+    entities:
+    - destination: Mallorca
+  - slot_was_set:
+    - destination: Mallorca
+  - action: utter_running_search
+  - action: utter_ask_mobile_number
+  - intent: get_contact_details
+    entities:
+    - phone_number: '9837382923'
+  - slot_was_set:
+    - phone_number: '9837382923'
+  - action: utter_booking_done
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: plan_a_trip
+  - action: action_suggest_places
+  - intent: plan_a_trip
+    entities:
+    - destination: Valencia
+    - destination: Valencia
+  - slot_was_set:
+    - destination: Valencia
+  - action: utter_running_search
+  - action: utter_ask_mobile_number
+  - intent: get_contact_details
+    entities:
+    - phone_number: '8383838383'
+    - phone_number: '8383838383'
+  - slot_was_set:
+    - phone_number: '8383838383'
   - action: utter_booking_done
   - intent: goodbye
   - action: utter_goodbye
