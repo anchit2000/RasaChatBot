@@ -1,6 +1,0 @@
-[
-  {
-    "name": "destination",
-    "pattern": "(\\bMerida\\b|\\bBilbao\\b|\\bSalamanca\\b|\\bCuenca\\b|\\bIbiza\\b|\\bSegovia\\b|\\bRonda\\b|\\bSantiago\\ de\\ Compostela\\b|\\bToledo\\b|\\bCordoba\\b|\\bSan\\ Sebastian\\b|\\bValencia\\b|\\bSeville\\b|\\bMadrid\\b|\\bMallorca\\b|\\bBarcelona\\b|\\bGranada\\b)"
-  }
-]
