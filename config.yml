@@ -15,25 +15,25 @@ pipeline:
      "case_sensitive": True
      #  use match word boundaries for lookup table
      "use_word_boundaries": True
-#   - name: LexicalSyntacticFeaturizer
-#   - name: CountVectorsFeaturizer
-#   - name: CountVectorsFeaturizer
-#     analyzer: char_wb
-#     min_ngram: 1
-#     max_ngram: 4
+   - name: LexicalSyntacticFeaturizer
+   - name: CountVectorsFeaturizer
+   - name: CountVectorsFeaturizer
+     analyzer: char_wb
+     min_ngram: 1
+     max_ngram: 4
    - name: DIETClassifier
      epochs: 200
-#     constrain_similarities: true
+     constrain_similarities: true
    - name: EntitySynonymMapper
    - name: CRFEntityExtractor
      epochs: 200
      pattern: true
    - name: ResponseSelector
      epochs: 100
-#     constrain_similarities: true
-#   - name: FallbackClassifier
-#     threshold: 0.3
-#     ambiguity_threshold: 0.1
+     constrain_similarities: true
+   - name: FallbackClassifier
+     threshold: 0.3
+     ambiguity_threshold: 0.1
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
