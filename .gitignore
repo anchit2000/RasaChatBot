@@ -1,0 +1,4 @@
+.rasa/
+.idea/
+story_graph.dot
+models/
