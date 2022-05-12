@@ -3,10 +3,10 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- get_contact_details
-- greet
 - plan_a_trip:
     is_retrieval_intent: true
+- greet
+- get_contact_details
 - goodbye
 - affirm
 - deny

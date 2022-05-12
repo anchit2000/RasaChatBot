@@ -27,6 +27,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - Thank you
 - intent: affirm
   examples: |
     - yes
@@ -87,6 +88,8 @@ nlu:
     - I wish to go to [Spain](destination)
     - I want to go to [Madrid](destination)
     - I wanted to go to [Bilbao](destination)
+    - I want to visit [Barcelona](destination)
+    - I want to go to [Ibiza](destination).
 - intent: plan_a_trip/generic
   examples: |
     - I wish to go to a trip.
@@ -94,6 +97,7 @@ nlu:
     - I need a trip.
     - I need something to relax myself.
     - I can use some trip.
+    - I want to go somewhere.
 - intent: get_contact_details
   examples: |
     - My mobile number is [7986485146](phone_number)
@@ -102,9 +106,8 @@ nlu:
     - [7986485146](phone_number) is my number
     - Okay [7986485146](phone_number)
     - my mobile number is [7986485146](phone_number)
-- intent: plan_a_trip
-  examples: |
-    - I want to go to [Ibiza](destination)[Ibiza](destination)
+    - my mobile number is [9914417457](phone_number)
+
 - regex: phone_number
   examples: |
     - \d{10,12}

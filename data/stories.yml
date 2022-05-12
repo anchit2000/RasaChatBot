@@ -47,3 +47,24 @@ stories:
   - action: utter_booking_done
   - intent: goodbye
   - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: plan_a_trip
+  - action: action_suggest_places
+  - intent: plan_a_trip
+    entities:
+    - destination: Barcelona
+  - slot_was_set:
+    - destination: Barcelona
+  - action: utter_ask_mobile_number
+  - intent: get_contact_details
+    entities:
+    - phone_number: '9914417457'
+  - slot_was_set:
+    - phone_number: '9914417457'
+  - action: utter_booking_done
+  - intent: goodbye
+  - action: utter_goodbye

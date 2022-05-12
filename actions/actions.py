@@ -24,17 +24,12 @@ class ActionSuggestPlaces(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        destination_value = tracker.get_slot("destination")
+        places = ["Merida", "Bilbao", "Salamanca", "Cuenca", "Ibiza", "Segovia", "Ronda", "Santiago de Compostela",
+                  "Toledo", "Cordoba", "San Sebastian", "Valencia", "Seville", "Madrid", "Mallorca", "Barcelona",
+                  "Granada", ]
 
-        if not destination_value:
+        response = str(f"You can visit {str(random.choice(places))}")
 
-            places = ["Merida", "Bilbao", "Salamanca", "Cuenca", "Ibiza", "Segovia", "Ronda", "Santiago de Compostela",
-                      "Toledo", "Cordoba", "San Sebastian", "Valencia", "Seville", "Madrid", "Mallorca", "Barcelona",
-                      "Granada", ]
-
-            dispatcher.utter_message(text=f"You can visit {random.choice(places)}")
-
-        else:
-            dispatcher.utter_message(text=f"{destination_value} is a great place!")
+        dispatcher.utter_message(text=response)
 
         return []
