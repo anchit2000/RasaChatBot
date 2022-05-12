@@ -28,3 +28,22 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: plan_a_trip
+    entities:
+    - destination: Ibiza
+  - slot_was_set:
+    - destination: Ibiza
+  - action: utter_ask_mobile_number
+  - intent: get_contact_details
+    entities:
+    - phone_number: '7986485146'
+  - slot_was_set:
+    - phone_number: '7986485146'
+  - action: utter_booking_done
+  - intent: goodbye
+  - action: utter_goodbye

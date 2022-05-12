@@ -1,57 +1,66 @@
-version: "3.0"
-
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - plan_a_trip
-
+- get_contact_details
+- greet
+- plan_a_trip:
+    is_retrieval_intent: true
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
 entities:
 - destination
-
+- phone_number
 slots:
   destination:
     type: text
     influence_conversation: false
     mappings:
-      - type: from_entity
-        entity: destination
-
+    - type: from_entity
+      entity: destination
+  phone_number:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: phone_number
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
+  - text: Hey! How are you? How can I help you today?
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Great, carry on!
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-  utter_trip:
-  - text: "Okay, enjoy!!"
-
+  - text: I am a bot, powered by Rasa.
+  utter_enjoy:
+  - text: Okay, enjoy!!
+  utter_run_search:
+  - text: Okay, I am running search for {destination}. Is that correct?
+  utter_booking_done:
+  - text: Congratulations! Your bookings have been made! And will be sent to {phone_number}
+  utter_ask_mobile_number:
+  - text: What is your mobile number?
 actions:
-- utter_greet
+- action_suggest_places
+- utter_ask_mobile_number
+- utter_booking_done
 - utter_cheer_up
 - utter_did_that_help
-- utter_happy
+- utter_enjoy
 - utter_goodbye
+- utter_greet
+- utter_happy
 - utter_iambot
-- utter_trip
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+- utter_plan_a_trip
+- utter_run_search

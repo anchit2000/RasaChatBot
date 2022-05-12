@@ -1,5 +1,4 @@
 version: "3.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -29,7 +27,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -38,7 +35,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -48,7 +44,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -65,7 +60,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -82,20 +76,17 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: plan_a_trip/specefic
   examples: |
-    - I wish to go to [Spain]{"entity":"destination"}
-    - I want to go to [Madrid]{"entity":"destination"}
-    - I wanted to go to [Bilbao]{"entity":"destination"}
-
+    - I wish to go to [Spain](destination)
+    - I want to go to [Madrid](destination)
+    - I wanted to go to [Bilbao](destination)
 - intent: plan_a_trip/generic
   examples: |
     - I wish to go to a trip.
@@ -103,7 +94,20 @@ nlu:
     - I need a trip.
     - I need something to relax myself.
     - I can use some trip.
-
+- intent: get_contact_details
+  examples: |
+    - My mobile number is [7986485146](phone_number)
+    - Sure it is [7986485146](phone_number)
+    - [7986485146](phone_number)
+    - [7986485146](phone_number) is my number
+    - Okay [7986485146](phone_number)
+    - my mobile number is [7986485146](phone_number)
+- intent: plan_a_trip
+  examples: |
+    - I want to go to [Ibiza](destination)[Ibiza](destination)
+- regex: phone_number
+  examples: |
+    - \d{10,12}
 - lookup: destination
   examples: |
     - Merida
@@ -123,6 +127,3 @@ nlu:
     - Mallorca
     - Barcelona
     - Granada
-    
-    
-
